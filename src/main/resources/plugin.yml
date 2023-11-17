@@ -1,0 +1,4 @@
+name: Scorched
+version: '${project.version}'
+main: pricedown.scorched.Scorched
+api-version: '1.20'
