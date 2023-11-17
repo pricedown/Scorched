@@ -1,13 +1,12 @@
 package pricedown.scorched;
 
 import org.bukkit.Bukkit;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import pricedown.scorched.listeners.BedsNerf;
-import pricedown.scorched.utils.Debugging;
-
-import java.util.Set;
+import pricedown.scorched.listeners.Beds;
+import pricedown.scorched.listeners.ExpEvents;
+import pricedown.scorched.listeners.Spawn;
+import pricedown.scorched.utils.Debug;
 
 public final class Scorched extends JavaPlugin {
 
@@ -15,17 +14,19 @@ public final class Scorched extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Debugging.log("enabled!");
+        Debug.log("enabled!");
         registerEvents();
     }
 
     @Override
     public void onDisable() {
-        Debugging.log("disabled!");
+        Debug.log("disabled!");
     }
 
     private void registerEvents() {
         // TODO: maybe use set
-        manager.registerEvents(new BedsNerf(), this);
+        manager.registerEvents(new Beds(), this);
+        manager.registerEvents(new ExpEvents(), this);
+        manager.registerEvents(new Spawn(), this);
     }
 }
