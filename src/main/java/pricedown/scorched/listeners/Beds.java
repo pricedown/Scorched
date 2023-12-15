@@ -32,7 +32,7 @@ public class Beds implements Listener {
     }
 
     @EventHandler
-    public void onSetSpawn(PlayerSpawnChangeEvent event) throws InterruptedException {
+    public void onSetSpawn(PlayerSpawnChangeEvent event) {
         if (event.getCause() != PlayerSpawnChangeEvent.Cause.BED)
             return;
 
